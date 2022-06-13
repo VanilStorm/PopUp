@@ -1,0 +1,578 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    position: relative;
+    max-width: 40%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+
+/* header */
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    border-top: 1px;
+    border-radius: 10px 10px 0 0;
+    padding: 16px 24px;
+
+    background-color: #F6F7FB;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.closeIcon {
+    width: 16px;
+    height: 16px;
+
+    background-image: url(./icons/close.svg);
+}
+
+/* main */
+
+main {
+    max-width: 80%;
+    padding-top: 24px;
+    margin: 0 auto;
+}
+
+.nameInput {
+    position: relative;
+}
+
+.nameInput input {
+    position: relative;
+    outline: none;
+    border: 1px solid #AFB6C6;
+    border-radius: 3px;
+
+    width: 100%;
+    padding: 8px 12px;
+}
+
+.nameInput::after {
+    position: absolute;
+    content: url(./icons/NameLabel.svg);
+
+    width: auto;
+    height: 10px;
+
+    background-color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+
+    top: -8px;
+    left: 8px;
+}
+
+.workweek {
+    position: relative;
+    width: 470px;
+    height: 72px;
+    margin-top: 24px;
+}
+
+.workdays {
+    position: absolute;
+    width: 327px;
+    height: 72px;
+
+    top: -5%;
+    left: 30%;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.workweekIcon {
+    width: 74px;
+    height: 10px;
+
+    background-image: url(./icons/Workweek.svg);
+}
+
+.customCheckbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.customCheckbox label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.customCheckbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    margin-bottom: -2px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #00a0ec;
+    border-radius: 0.25em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.customCheckbox:checked+label::before {
+    border-color: #0b76ef;
+    background-color: #eef7fc;
+    background-image: url(./icons/checked.svg);
+}
+
+.checkbox {
+    flex: 1 1 100px;
+
+    align-items: center;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+/* accountingYear */
+
+.accountingYear {
+    position: relative;
+}
+
+.groupIcon {
+    position: absolute;
+    right: 10px;
+    width: 8px;
+    height: 12px;
+
+    background-image: url(./icons/Group.svg);
+}
+
+.accountingYearInput {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.accountingYearInput input {
+    position: relative;
+    outline: none;
+    border: 1px solid #AFB6C6;
+    border-radius: 3px;
+
+    width: 100%;
+    padding: 8px 12px;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.infoIcon {
+    position: absolute;
+    top: 7px;
+    right: -25px;
+    width: 18px;
+    height: 18px;
+
+    background-image: url(./icons/infoIcon.svg);
+}
+
+.accountingIcon {
+    position: absolute;
+    top: -8px;
+    left: 8px;
+
+    width: 170px;
+    height: 15px;
+
+    background-image: url(./icons/accounting.svg);
+}
+
+/* fiscal */
+
+.fiscalYear {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.month {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.month input {
+    position: relative;
+    outline: none;
+    border: 1px solid #AFB6C6;
+    border-radius: 3px;
+
+    width: 120px;
+    padding: 8px 12px;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.month ::after {
+    position: absolute;
+    top: -20px;
+    right: -2px;
+    content: url(./icons/fiscal.svg);
+    width: 103px;
+    height: 15px;
+}
+
+
+.day input {
+    position: relative;
+    outline: none;
+    border: 1px solid #AFB6C6;
+    border-radius: 3px;
+
+    width: 60px;
+    padding: 8px 12px;
+
+    margin-left: 16px;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.day {
+    position: relative;
+}
+
+.day div {
+    position: absolute;
+    top: 10px;
+    right: 10%;
+}
+
+
+/* noBrought */
+
+.noBrought {
+    position: relative;
+    margin-top: 20px;
+}
+
+.noBrought label {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.noBrought .customCheckbox+label::before {
+    margin-right: 16px;
+}
+
+.noBrought .infoIcon {
+    position: absolute;
+    top: 4px;
+    left: 240px;
+    width: 18px;
+    height: 18px;
+
+    background-image: url(./icons/infoIcon.svg);
+}
+
+
+/* weekStartsOn */
+
+.weekStartsOn {
+    position: relative;
+    margin-top: 25px;
+}
+
+.weekStartsOn input {
+    position: relative;
+    outline: none;
+    border: 1px solid #AFB6C6;
+    border-radius: 3px;
+
+    width: 30%;
+    padding: 8px 12px;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.weekStartsOn .groupIcon {
+    position: absolute;
+    left: 25%;
+}
+
+.weekStartsOn .weekStartsOnIcon {
+    position: absolute;
+    top: -8px;
+    left: 6px;
+    content: url(./icons/weekStartsOn.svg);
+    width: 103px;
+    height: 15px;
+}
+
+.weekStartsOn {
+    display: flex;
+    align-items: center;
+}
+
+
+/* timeZone */
+
+.timeZone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.timeZone input {
+    position: relative;
+    outline: none;
+    border: 1px solid #AFB6C6;
+    border-radius: 3px;
+
+    width: 92%;
+    padding: 8px 12px;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.timeZoneIcon {
+    position: absolute;
+    top: -9px;
+    left: 8px;
+    width: 76px;
+    height: 15px;
+
+    background-image: url(./icons/timeZone.svg);
+}
+
+.timeZone .groupIcon {
+    right: 50px;
+}
+
+.timeZone .infoIcon{
+    right: 5px;
+}
+
+/* users */
+
+
+.users {
+    display: flex;
+    position: relative;
+    outline: none;
+    border: 1px solid #AFB6C6;
+    border-radius: 3px;
+
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 30px;
+
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.user {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    height: 24px;
+
+    border-radius: 3px;
+
+    padding: 4px;
+    margin-right: 6px;
+
+    color: #00A0EC;
+    background-color: #EEF7FC;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.blueClose {
+    width: 16px;
+    height: 16px;
+
+    margin-left: 6px;
+
+    background-image: url(./icons/closeBlue.svg);
+}
+
+
+.users .groupIcon {
+    top: 15px;
+}
+
+.usersIcon {
+    position: absolute;
+    top: -10px;
+    left: 8px;
+    width: 43px;
+    height: 15px;
+
+    background-image: url(./icons/users.svg);
+}
+
+
+/* warning */
+
+.warning {
+    display: flex;
+
+    margin-top: 8px;
+    width: 470px;
+    height: 32px;
+}
+
+.warningIcon {
+    width: 29px;
+    height: 16px;
+
+    background-image: url(./icons/iconWarning.svg);
+}
+
+.warning span {
+    margin-left: 8px;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+
+    color: #868C98;
+}
+
+
+/* make loc default */
+
+
+.makeLocDef {
+    position: relative;
+    margin-top: 20px;
+}
+
+.makeLocDef label {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.makeLocDef .customCheckbox+label::before {
+    margin-right: 16px;
+}
+
+.makeLocDef .infoIcon {
+    position: absolute;
+    top: 4px;
+    left: 210px;
+    width: 18px;
+    height: 18px;
+
+    background-image: url(./icons/infoIcon.svg);
+}
+
+/* leavePolice */
+
+.leavePolice {
+    width: 460px;
+    height: 67px;
+
+    border: 1px solid #00A0EC;
+    border-radius: 5px;
+    background-color: #eef7fc;
+
+    padding: 8px 12px;
+    margin-top: 24px;
+
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.leavePolice span {
+    border-bottom: 1px solid #00A0EC;
+    color: #00A0EC;
+    cursor: pointer;
+}
+
+/* CreateCancel */
+
+.createCancel {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.createCancel button {
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+
+.createCancel .cancel {
+    width: 94px;
+    height: 40px;
+
+    padding: 12px 24px;
+
+    background-color: #afb6c6;
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: white;
+
+    transition: .4s;
+    cursor: pointer;
+}
+
+.createCancel .cancel:hover {
+    background-color: #99a0af;
+}
+
+.createCancel .create {
+    width: 94px;
+    height: 40px;
+
+    padding: 12px 24px;
+    margin-left: 8px;
+
+    background-color: #00A0EC;
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: white;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.createCancel .create:hover {
+    background-color: #0085c3;
+}
